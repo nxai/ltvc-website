@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_la'); // ຊື່ພາກວິຊາ (ລາວ)
             $table->string('icon')->nullable(); // Icon ຂອງພາກວິຊາ
-            $table->string('image')->nullable()->after('icon');
+            $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -16,7 +16,7 @@
                     <h6 class="text-white text-uppercase opacity-75 small fw-bold mb-1">ພາກວິຊາທັງໝົດ</h6>
                     <h1 class="display-5 fw-bold text-white mb-0">{{ number_format($totalDepartments) }}</h1>
                     <div class="mt-3">
-                        <a href="{{ route('departments.index') }}" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary shadow-sm">
+                        <a href="{{ route('admin.departments.index') }}" class="btn btn-light btn-sm rounded-pill px-3 fw-bold text-primary shadow-sm">
                             ຈັດການ <i class="bi bi-arrow-right-short ms-1"></i>
                         </a>
                     </div>
@@ -60,6 +60,58 @@
         </div>
     </div>
 </div>
+<div class="col-md-3">
+    <div class="card border-0 shadow-sm rounded-4 bg-info text-white">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="fw-bold">ຂໍ້ຄວາມໃໝ່</h6>
+                    <h2 class="fw-bold mb-0">{{ $unreadMessages }}</h2>
+                </div>
+                <i class="bi bi-chat-left-dots fs-1 opacity-50"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4 mt-4">
+    <div class="card-body p-4">
+        <h5 class="fw-bold mb-4">ຂໍ້ຄວາມຕິດຕໍ່ລ່າສຸດ</h5>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ຜູ້ຕິດຕໍ່</th>
+                        <th>ຫົວຂໍ້</th>
+                        <th>ວັນທີ</th>
+                        <th>ສະຖານະ</th>
+                        <th>ຈັດການ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($recentMessages as $msg)
+                    <tr>
+                        <td>{{ $msg->name }} <br> <small class="text-muted">{{ $msg->phone }}</small></td>
+                        <td>{{ $msg->subject }}</td>
+                        <td>{{ $msg->created_at->format('d/m/Y H:i') }}</td>
+                        <td>
+                            @if($msg->is_read)
+                                <span class="badge bg-success-subtle text-success">ອ່ານແລ້ວ</span>
+                            @else
+                                <span class="badge bg-danger">ໃໝ່</span>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary">ເບິ່ງລາຍລະອຽດ</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
 
             <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                 <div class="card-header bg-white py-4 px-4 border-0 d-flex justify-content-between align-items-center">

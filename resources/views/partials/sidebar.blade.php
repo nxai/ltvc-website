@@ -23,6 +23,9 @@
         <a href="{{ route('admin.sliders.index') }}" class="nav-link-admin {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}">
             <i class="bi bi-images"></i> ຮູບສະໄລ້
         </a>
+        <a href="{{ route('admin.contacts.index') }}" class="nav-link-admin {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
+            <i class="bi bi-chat-left-dots"></i> ຂໍ້ຄວາມຕິດຕໍ່
+        </a>
         <a href="{{ route('admin.settings.index') }}" class="nav-link-admin {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
             <i class="bi bi-gear-fill"></i> ຕັ້ງຄ່າ Logo
         </a>

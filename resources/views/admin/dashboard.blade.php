@@ -102,7 +102,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-outline-primary">ເບິ່ງລາຍລະອຽດ</a>
+                            <a href="{{ route('admin.contacts.show', $msg->id) }}" class="btn btn-sm btn-outline-primary">ເບິ່ງລາຍລະອຽດ</a>
                         </td>
                     </tr>
                     @endforeach

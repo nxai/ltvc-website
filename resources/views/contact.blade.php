@@ -61,25 +61,29 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold small">ຊື່ ແລະ ນາມສະກຸນ</label>
-                                    <input type="text" class="form-control form-control-lg rounded-3 fs-6" placeholder="ກະລຸນາໃສ່ຊື່ຂອງທ່ານ" required>
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control form-control-lg rounded-3 fs-6 @error('name') is-invalid @enderror" placeholder="ກະລຸນາໃສ່ຊື່ຂອງທ່ານ" required>
+                                    @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold small">ເບີໂທລະສັບ</label>
-                                    <input type="tel" class="form-control form-control-lg rounded-3 fs-6" placeholder="020 xxxx xxxx" required>
+                                    <input type="tel" name="phone" value="{{ old('phone') }}" class="form-control form-control-lg rounded-3 fs-6 @error('phone') is-invalid @enderror" placeholder="020 xxxx xxxx" required>
+                                    @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label fw-bold small">ຫົວຂໍ້</label>
-                                    <select class="form-select form-control-lg rounded-3 fs-6">
-                                        <option selected disabled>ເລືອກຫົວຂໍ້ທີ່ຕ້ອງການສອບຖາມ</option>
-                                        <option>ສອບຖາມເລື່ອງການສະໝັກຮຽນ</option>
-                                        <option>ສອບຖາມເລື່ອງຫຼັກສູດ</option>
-                                        <option>ຕິດຕໍ່ພົວພັນວຽກງານພາຍນອກ</option>
-                                        <option>ອື່ນໆ</option>
+                                    <select name="subject" class="form-select form-control-lg rounded-3 fs-6 @error('subject') is-invalid @enderror" required>
+                                        <option value="" selected disabled>ເລືອກຫົວຂໍ້ທີ່ຕ້ອງການສອບຖາມ</option>
+                                        <option value="ສອບຖາມເລື່ອງການສະໝັກຮຽນ" {{ old('subject') == 'ສອບຖາມເລື່ອງການສະໝັກຮຽນ' ? 'selected' : '' }}>ສອບຖາມເລື່ອງການສະໝັກຮຽນ</option>
+                                        <option value="ສອບຖາມເລື່ອງຫຼັກສູດ" {{ old('subject') == 'ສອບຖາມເລື່ອງຫຼັກສູດ' ? 'selected' : '' }}>ສອບຖາມເລື່ອງຫຼັກສູດ</option>
+                                        <option value="ຕິດຕໍ່ພົວພັນວຽກງານພາຍນອກ" {{ old('subject') == 'ຕິດຕໍ່ພົວພັນວຽກງານພາຍນອກ' ? 'selected' : '' }}>ຕິດຕໍ່ພົວພັນວຽກງານພາຍນອກ</option>
+                                        <option value="ອື່ນໆ" {{ old('subject') == 'ອື່ນໆ' ? 'selected' : '' }}>ອື່ນໆ</option>
                                     </select>
+                                    @error('subject') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label fw-bold small">ຂໍ້ຄວາມຂອງທ່ານ</label>
-                                    <textarea class="form-control rounded-3 fs-6" rows="5" placeholder="ຂຽນລາຍລະອຽດທີ່ທ່ານຕ້ອງການສອບຖາມ..." required></textarea>
+                                    <textarea name="message" class="form-control rounded-3 fs-6 @error('message') is-invalid @enderror" rows="5" placeholder="ຂຽນລາຍລະອຽດທີ່ທ່ານຕ້ອງການສອບຖາມ..." required>{{ old('message') }}</textarea>
+                                    @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="col-12 mt-4">
                                     <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold shadow-sm py-3 transition-all hover-scale">

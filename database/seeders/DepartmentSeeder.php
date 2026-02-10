@@ -12,16 +12,18 @@ class DepartmentSeeder extends Seeder
      */
     public function run(): void
     {
-        // ກຸ່ມຂໍ້ມູນ 8 ພາກວິຊາ ຕາມ Profile ຂອງ LTVC
+        // ກຸ່ມຂໍ້ມູນ 10 ພາກວິຊາ ຕາມລາຍການທີ່ກຳນົດ
         $departments = [
-            ['name_la' => 'ພາກວິຊາ ພື້ນຖານວິຊາຊີບ', 'icon' => 'bi-tools'],
-            ['name_la' => 'ພາກວິຊາ ກົນຈັກ', 'icon' => 'bi-gear-wide-connected'],
-            ['name_la' => 'ພາກວິຊາ ໄຟຟ້າ-ເອເລັກໂຕຼນິກ', 'icon' => 'bi-lightning-charge'],
-            ['name_la' => 'ພາກວິຊາ ກໍ່ສ້າງເຄຫາສະຖານ', 'icon' => 'bi-building'],
-            ['name_la' => 'ພາກວິຊາ ເຕັກໂນໂລຊີຂໍ້ມູນຂ່າວສານ', 'icon' => 'bi-laptop'],
-            ['name_la' => 'ພາກວິຊາ ບໍລິຫານ-ການບັນຊີ', 'icon' => 'bi-calculator'],
-            ['name_la' => 'ພາກວິຊາ ກະສິກຳ', 'icon' => 'bi-tree'],
-            ['name_la' => 'ພາກວິຊາ ບໍລິການ ແລະ ທ່ອງທ່ຽວ', 'icon' => 'bi-cup-hot'],
+            ['name_la' => 'ບໍລິຫານ-ທຸລະກິດ', 'icon' => 'bi-briefcase'],
+            ['name_la' => 'ເຕັກໂນໂລຊີໄຟຟ້າ', 'icon' => 'bi-lightning-charge'],
+            ['name_la' => 'ອຸດສາຫະກໍາ', 'icon' => 'bi-gear'],
+            ['name_la' => 'ບໍລິຫານໂຮງແຮມ ແລະ ການທ່ອງທ່ຽວ', 'icon' => 'bi-cup-hot'],
+            ['name_la' => 'ກໍ່ສ້າງເຄຫາສະຖານ', 'icon' => 'bi-building'],
+            ['name_la' => 'ພະແນກ ວິຊາການ', 'icon' => 'bi-tools'],
+            ['name_la' => 'ພະແນກ ບໍລິຫານ ແລະ ຈັດຕັ້ງພະນັກງານ', 'icon' => 'bi-people'],
+            ['name_la' => 'ພະແນກ ກິດຈະການນັກສຶກສາ', 'icon' => 'bi-mortarboard'],
+            ['name_la' => 'ສຸນເຝິກອົບຮົມການບໍລິການໂຮງແຮມ ແລະ ການທອງທຽວ', 'icon' => 'bi-award'],
+            ['name_la' => 'ຄະນະອຳນວນການ', 'icon' => 'bi-calculator'],
         ];
 
         // ວົນລູບເພື່ອບັນທຶກລົງ Database

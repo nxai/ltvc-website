@@ -19,11 +19,7 @@ class DepartmentSeeder extends Seeder
             ['name_la' => 'ອຸດສາຫະກໍາ', 'icon' => 'bi-gear'],
             ['name_la' => 'ບໍລິຫານໂຮງແຮມ ແລະ ການທ່ອງທ່ຽວ', 'icon' => 'bi-cup-hot'],
             ['name_la' => 'ກໍ່ສ້າງເຄຫາສະຖານ', 'icon' => 'bi-building'],
-            ['name_la' => 'ພະແນກ ວິຊາການ', 'icon' => 'bi-tools'],
-            ['name_la' => 'ພະແນກ ບໍລິຫານ ແລະ ຈັດຕັ້ງພະນັກງານ', 'icon' => 'bi-people'],
-            ['name_la' => 'ພະແນກ ກິດຈະການນັກສຶກສາ', 'icon' => 'bi-mortarboard'],
             ['name_la' => 'ສຸນເຝິກອົບຮົມການບໍລິການໂຮງແຮມ ແລະ ການທອງທຽວ', 'icon' => 'bi-award'],
-            ['name_la' => 'ຄະນະອຳນວນການ', 'icon' => 'bi-calculator'],
         ];
 
         // ວົນລູບເພື່ອບັນທຶກລົງ Database

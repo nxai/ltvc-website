@@ -1,9 +1,13 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.courses.index') }}" class="text-decoration-none">ຫຼັກສູດ</a></li>
+        <li class="breadcrumb-item active">ເພີ່ມໃໝ່</li>
+    </x-slot>
     <div class="container py-5">
         <div class="card border-0 shadow-lg rounded-4 p-4 mx-auto" style="max-width: 600px;">
             <h4 class="fw-bold mb-4 text-primary">ເພີ່ມຫຼັກສູດໃໝ່</h4>
             
-            <form action="{{ route('courses.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">ເລືອກພາກວິຊາ</label>
@@ -45,9 +49,9 @@
 </div>
                 <div class="d-flex gap-2">
                     <button type="submit" class="btn btn-primary px-4">ບັນທຶກ</button>
-                    <a href="{{ route('courses.index') }}" class="btn btn-light px-4">ຍົກເລີກ</a>
+                    <a href="{{ route('admin.courses.index') }}" class="btn btn-light px-4">ຍົກເລີກ</a>
                 </div>
             </form>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

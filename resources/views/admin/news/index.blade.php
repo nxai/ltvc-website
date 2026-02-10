@@ -1,8 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-family: 'Noto Sans Lao', sans-serif;">
-            <i class="bi bi-newspaper me-2"></i>{{ __('ຈັດການຂ່າວສານ ແລະ ກິດຈະກຳ') }}
-        </h2>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item active">ຈັດການຂ່າວສານ</li>
     </x-slot>
 
     <div class="py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
@@ -112,13 +110,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .table thead th { font-weight: 600; letter-spacing: 0.5px; border-bottom: none; }
-        .bg-info-subtle { background-color: #e0f7fa; color: #00838f; }
-        .btn-white { background: white; transition: 0.2s; }
-        .btn-white:hover { background: #f8f9fa; }
-        .table-hover tbody tr:hover { background-color: #fcfcfc; }
-        .badge { font-weight: 600; }
-    </style>
-</x-app-layout>
+</x-admin-layout>

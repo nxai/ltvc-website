@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item active">ຈັດການພາກວິຊາ</li>
+    </x-slot>
     <div class="py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -66,4 +69,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

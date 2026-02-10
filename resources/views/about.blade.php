@@ -1,11 +1,5 @@
 <x-app-layout>
-    <div class="py-5 text-white" style="background: linear-gradient(135deg, #004a99 0%, #002d5d 100%);">
-        <div class="container text-center py-4">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">ກ່ຽວກັບ LTVC</h1>
-            <p class="lead opacity-75">ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ</p>
-            <div class="mx-auto bg-warning rounded-pill" style="height: 5px; width: 80px;"></div>
-        </div>
-    </div>
+    <x-page-header title="ກ່ຽວກັບ LTVC" subtitle="ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ" />
 
     <section class="py-5 bg-white">
         <div class="container">

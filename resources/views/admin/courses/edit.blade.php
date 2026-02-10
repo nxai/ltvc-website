@@ -1,9 +1,13 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.courses.index') }}" class="text-decoration-none">ຫຼັກສູດ</a></li>
+        <li class="breadcrumb-item active">ແກ້ໄຂ</li>
+    </x-slot>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="mb-4">
-                    <a href="{{ route('courses.index') }}" class="text-decoration-none text-muted">
+                    <a href="{{ route('admin.courses.index') }}" class="text-decoration-none text-muted">
                         <i class="bi bi-arrow-left me-1"></i> ກັບຄືນລາຍຊື່ຫຼັກສູດ
                     </a>
                 </div>
@@ -15,7 +19,7 @@
                     </div>
 
                     <div class="card-body p-4 p-md-5">
-                        <form action="{{ route('courses.update', $course->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.courses.update', $course->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -69,7 +73,7 @@
                             <hr class="my-4">
 
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a href="{{ route('courses.index') }}" class="btn btn-light px-4 rounded-pill">ຍົກເລີກ</a>
+                                <a href="{{ route('admin.courses.index') }}" class="btn btn-light px-4 rounded-pill">ຍົກເລີກ</a>
                                 <button type="submit" class="btn btn-warning px-4 rounded-pill fw-bold">
                                     <i class="bi bi-save me-1"></i> ບັນທຶກການປ່ຽນແປງ
                                 </button>
@@ -80,14 +84,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .form-control:focus, .form-select:focus {
-            border-color: #004a99;
-            box-shadow: 0 0 0 0.25 rgba(0, 74, 153, 0.1);
-        }
-        .bg-primary { background-color: #004a99 !important; }
-        .btn-warning { background-color: #ffcc00; border: none; color: #002d5d; }
-        .btn-warning:hover { background-color: #e6b800; color: #002d5d; }
-    </style>
-</x-app-layout>
+</x-admin-layout>

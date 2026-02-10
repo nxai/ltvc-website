@@ -1,8 +1,11 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item active">ຈັດການຮູບສະໄລ້</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="fw-bold text-primary mb-0"><i class="bi bi-images me-2"></i>ຈັດການຮູບສະໄລ້ໜ້າທຳອິດ</h4>
-            <a href="{{ route('sliders.create') }}" class="btn btn-primary rounded-pill px-4 shadow-sm">
+            <a href="{{ route('admin.sliders.create') }}" class="btn btn-primary rounded-pill px-4 shadow-sm">
                 <i class="bi bi-plus-circle me-1"></i> ເພີ່ມຮູບສະໄລ້ໃໝ່
             </a>
         </div>
@@ -33,7 +36,7 @@
                                 <small class="text-muted">{{ Str::limit($slide->description, 50) }}</small>
                             </td>
                             <td class="text-center">
-                                <form action="{{ route('sliders.toggle', $slide->id) }}" method="POST">
+                                <form action="{{ route('admin.sliders.toggle', $slide->id) }}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-sm rounded-pill px-3 border-0 {{ $slide->is_active ? 'bg-success-subtle text-success' : 'bg-secondary-subtle text-secondary' }}">
@@ -46,10 +49,10 @@
                                 </form>
                             </td>
                             <td class="pe-4 text-end">
-                                <a href="{{ route('sliders.edit', $slide->id) }}" class="btn btn-sm btn-outline-warning rounded-pill px-3 me-1">
+                                <a href="{{ route('admin.sliders.edit', $slide->id) }}" class="btn btn-sm btn-outline-warning rounded-pill px-3 me-1">
     <i class="bi bi-pencil-square"></i> ແກ້ໄຂ
 </a>
-                                <form action="{{ route('sliders.destroy', $slide->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('admin.sliders.destroy', $slide->id) }}" method="POST" class="d-inline">
                                     @csrf @method('DELETE')
                                     <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="return confirm('ຢືນຢັນການລຶບຮູບສະໄລ້ນີ້?')">
                                         <i class="bi bi-trash me-1"></i> ລຶບ
@@ -67,4 +70,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

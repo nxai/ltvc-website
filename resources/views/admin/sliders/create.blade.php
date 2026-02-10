@@ -1,4 +1,8 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.sliders.index') }}" class="text-decoration-none">ຮູບສະໄລ້</a></li>
+        <li class="breadcrumb-item active">ເພີ່ມໃໝ່</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -9,7 +13,7 @@
                     </div>
 
                     <div class="card-body p-4 p-md-5">
-                        <form action="{{ route('sliders.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.sliders.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             
                             <div class="mb-4">
@@ -39,7 +43,7 @@
                                 <button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold shadow-sm">
                                     <i class="bi bi-cloud-arrow-up me-2"></i> ບັນທຶກ ແລະ ອັບໂຫຼດ
                                 </button>
-                                <a href="{{ route('sliders.index') }}" class="btn btn-light rounded-pill py-2">ຍົກເລີກ</a>
+                                <a href="{{ route('admin.sliders.index') }}" class="btn btn-light rounded-pill py-2">ຍົກເລີກ</a>
                             </div>
                         </form>
                     </div>
@@ -59,10 +63,4 @@
             }
         }
     </script>
-
-    <style>
-        .border-dashed { border: 2px dashed #004a99 !important; }
-        .upload-area { transition: 0.3s; }
-        .upload-area:hover { background-color: #eef4ff !important; border-color: #002d5d !important; }
-    </style>
-</x-app-layout>
+</x-admin-layout>

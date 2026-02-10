@@ -15,8 +15,8 @@
     <td><i class="bi bi-clock me-1"></i> {{ $course->duration ?? '-' }}</td>
     <td class="text-center">
         <div class="btn-group shadow-sm rounded-pill overflow-hidden">
-            <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-sm btn-warning border-0 px-3"><i class="bi bi-pencil-square"></i></a>
-            <form action="{{ route('courses.destroy', $course->id) }}" method="POST" class="d-inline">
+            <a href="{{ route('admin.courses.edit', $course->id) }}" class="btn btn-sm btn-warning border-0 px-3"><i class="bi bi-pencil-square"></i></a>
+            <form action="{{ route('admin.courses.destroy', $course->id) }}" method="POST" class="d-inline">
                 @csrf @method('DELETE')
                 <button type="submit" class="btn btn-sm btn-danger border-0 px-3" onclick="return confirm('ຢືນຢັນການລຶບ?')"><i class="bi bi-trash"></i></button>
             </form>

@@ -1,6 +1,14 @@
 {
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-BeopsB42.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-mSm7cUeB.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CEwZte8_.css",
+    "file": "assets/app-BukD8xf3.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -8,8 +16,17 @@
       "app.css"
     ]
   },
+  "resources/css/ltvc-theme.css": {
+    "file": "assets/ltvc-theme-BMJACNMc.css",
+    "src": "resources/css/ltvc-theme.css",
+    "isEntry": true,
+    "name": "ltvc-theme",
+    "names": [
+      "ltvc-theme.css"
+    ]
+  },
   "resources/js/app.js": {
-    "file": "assets/app-CWxCsbqF.js",
+    "file": "assets/app-BxqtpT5h.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

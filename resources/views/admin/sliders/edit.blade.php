@@ -1,9 +1,13 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.sliders.index') }}" class="text-decoration-none">ຮູບສະໄລ້</a></li>
+        <li class="breadcrumb-item active">ແກ້ໄຂ</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="mb-3">
-                    <a href="{{ route('sliders.index') }}" class="text-decoration-none text-muted small">
+                    <a href="{{ route('admin.sliders.index') }}" class="text-decoration-none text-muted small">
                         <i class="bi bi-arrow-left"></i> ກັບຄືນ
                     </a>
                 </div>
@@ -14,7 +18,7 @@
                     </div>
 
                     <div class="card-body p-4 p-md-5">
-                        <form action="{{ route('sliders.update', $slider->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.sliders.update', $slider->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') {{-- ສິ່ງສຳຄັນສຳລັບການ Update --}}
                             
@@ -67,9 +71,4 @@
             }
         }
     </script>
-
-    <style>
-        .border-dashed { border: 2px dashed #ffc107 !important; }
-        .bg-warning { background-color: #ffc107 !important; }
-    </style>
-</x-app-layout>
+</x-admin-layout>

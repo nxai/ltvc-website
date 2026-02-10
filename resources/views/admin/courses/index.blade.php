@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item active">ຈັດການຫຼັກສູດ</li>
+    </x-slot>
     <div class="container py-5">
         <div class="row mb-4 align-items-center">
             <div class="col-md-4">
@@ -13,7 +16,7 @@
                 </div>
             </div>
             <div class="col-md-3 text-end">
-                <a href="{{ route('courses.create') }}" class="btn btn-primary rounded-pill px-4">+ ເພີ່ມໃໝ່</a>
+                <a href="{{ route('admin.courses.create') }}" class="btn btn-primary rounded-pill px-4">+ ເພີ່ມໃໝ່</a>
             </div>
         </div>
 
@@ -41,7 +44,7 @@
             const query = this.value;
 
             // ໃຊ້ Fetch API ເພື່ອດຶງຂໍ້ມູນແບບ AJAX
-            fetch(`{{ route('courses.index') }}?search=${query}`, {
+            fetch(`{{ route('admin.courses.index') }}?search=${query}`, {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest'
                 }
@@ -70,4 +73,4 @@
             }
         });
     </script>
-</x-app-layout>
+</x-admin-layout>

@@ -1,4 +1,7 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item active">ຕັ້ງຄ່າ</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -47,4 +50,4 @@
             reader.readAsDataURL(event.target.files[0]);
         }
     </script>
-</x-app-layout>
+</x-admin-layout>

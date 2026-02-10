@@ -1,11 +1,8 @@
 <x-app-layout>
-    <div class="py-5 text-white" style="background: linear-gradient(135deg, #004a99 0%, #002d5d 100%);">
-        <div class="container text-center py-4">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">ພາກວິຊາທັງໝົດ</h1>
-            <p class="lead opacity-75">ລວມທຸກສາຂາວິຊາທີ່ເປີດສອນໃນ ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ</p>
-            <div class="mx-auto bg-warning rounded-pill" style="height: 5px; width: 80px;"></div>
-        </div>
-    </div>
+    <x-page-header 
+        title="ພາກວິຊາທັງໝົດ" 
+        subtitle="ລວມທຸກສາຂາວິຊາທີ່ເປີດສອນໃນ ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ" 
+    />
 
     <section class="py-5 bg-light">
         <div class="container">
@@ -50,16 +47,4 @@
             </div>
         </div>
     </section>
-
-    <style>
-        .dept-grand-card { transition: all 0.4s ease; }
-        .dept-grand-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,74,153,0.15) !important; }
-        .transition-img { transition: transform 0.8s ease; }
-        .dept-grand-card:hover .transition-img { transform: scale(1.1); }
-        .object-fit-cover { object-fit: cover; }
-        .transition-all { transition: all 0.3s ease; }
-        
-        .btn-primary { background-color: #004a99; border: none; }
-        .btn-primary:hover { background-color: #002d5d; transform: scale(1.02); }
-    </style>
 </x-app-layout>

@@ -1,11 +1,5 @@
 <x-app-layout>
-    <div class="py-5 text-white" style="background: linear-gradient(135deg, #004a99 0%, #002d5d 100%);">
-        <div class="container text-center py-4">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">ຕິດຕໍ່ພວກເຮົາ</h1>
-            <p class="lead opacity-75">ພວກເຮົາພ້ອມທີ່ຈະໃຫ້ຂໍ້ມູນ ແລະ ຄຳປຶກສາແກ່ທ່ານ</p>
-            <div class="mx-auto bg-warning rounded-pill" style="height: 5px; width: 80px;"></div>
-        </div>
-    </div>
+    <x-page-header title="ຕິດຕໍ່ພວກເຮົາ" subtitle="ພວກເຮົາພ້ອມທີ່ຈະໃຫ້ຂໍ້ມູນ ແລະ ຄຳປຶກສາແກ່ທ່ານ" />
 
     <section class="py-5 bg-light">
         <div class="container">
@@ -99,14 +93,4 @@
             </div>
         </div>
     </section>
-
-    <style>
-        .hover-scale { transition: 0.3s; }
-        .hover-scale:hover { transform: scale(1.02); }
-        .bg-opacity-10 { --bs-bg-opacity: 0.1; }
-        .form-control:focus, .form-select:focus {
-            border-color: #004a99;
-            box-shadow: 0 0 0 0.25rem rgba(0, 74, 153, 0.1);
-        }
-    </style>
 </x-app-layout>

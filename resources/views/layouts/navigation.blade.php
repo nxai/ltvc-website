@@ -15,12 +15,6 @@
                     </a>
                 </div>
 
-                @php 
-                    $isAdmin = request()->is('admin*') || request()->is('dashboard*') || request()->is('profile*'); 
-                @endphp
-
-                @if(!$isAdmin)
-                {{-- ເພີ່ມໄລຍະຫ່າງຈາກ ms-10 ເປັນ ms-6 ແລະ ຈັດ items-center --}}
                 <div class="hidden space-x-6 sm:ms-6 sm:flex items-center h-100" style="font-family: 'Noto Sans Lao', sans-serif;">
                     <x-nav-link :href="url('/')" :active="request()->is('/')" class="h-100 flex items-center px-3 fw-medium">
                         {{ __('ໜ້າຫຼັກ') }}
@@ -38,11 +32,6 @@
                         {{ __('ຕິດຕໍ່ພວກເຮົາ') }}
                     </x-nav-link>
                 </div>
-                @else
-                <div class="hidden sm:flex items-center ms-6 text-primary fw-bold small bg-primary-subtle px-3 py-1 rounded-pill">
-                    <i class="bi bi-shield-lock-fill me-2"></i> Admin Panel
-                </div>
-                @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -60,11 +49,9 @@
                             </button>
                         </x-slot>
                         <x-slot name="content">
-                            @if(!$isAdmin)
-                                <x-dropdown-link :href="route('dashboard')" class="text-decoration-none">
-                                    <i class="bi bi-speedometer2 me-2 text-primary"></i> {{ __('Dashboard Admin') }}
-                                </x-dropdown-link>
-                            @endif
+                            <x-dropdown-link :href="route('admin.dashboard')" class="text-decoration-none">
+                                <i class="bi bi-speedometer2 me-2 text-primary"></i> {{ __('Dashboard Admin') }}
+                            </x-dropdown-link>
                             <x-dropdown-link :href="route('profile.edit')" class="text-decoration-none">
                                 <i class="bi bi-person-gear me-2"></i> {{ __('Profile') }}
                             </x-dropdown-link>

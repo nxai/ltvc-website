@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>LTVC | ວິທະຍາໄລ ເຕັກນິກ-ວິຊາຊີບ ຫຼວງພະບາງ</title>
+    <title>LTVC Admin | {{ $title ?? 'Dashboard' }}</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     @vite(['resources/css/app.css', 'resources/css/ltvc-theme.css', 'resources/js/app.js'])
 
     @stack('styles')
 </head>
 <body class="antialiased">
-    <div class="main-wrapper">
+    @include('partials.sidebar')
+
+    <div class="main-wrapper has-sidebar">
         @include('layouts.navigation')
 
         @isset($header)
@@ -25,14 +25,24 @@
             </header>
         @endisset
 
-        <main class="flex-grow-1">
+        <main class="flex-grow-1 p-4">
+            @isset($breadcrumb)
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item">
+                            <a href="{{ route('admin.dashboard') }}" class="text-decoration-none">
+                                <i class="bi bi-house-door me-1"></i>Dashboard
+                            </a>
+                        </li>
+                        {{ $breadcrumb }}
+                    </ol>
+                </nav>
+            @endisset
+
             {{ $slot }}
         </main>
-
-        @include('partials.footer')
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     @stack('scripts')
 </body>
 </html>

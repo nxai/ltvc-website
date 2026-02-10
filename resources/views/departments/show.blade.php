@@ -1,8 +1,14 @@
 <x-app-layout>
-    <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
+    <x-page-header 
+        :title="$department->name_la" 
+        subtitle="ລາຍລະອຽດພາກວິຊາ ແລະ ຫຼັກສູດທີ່ເປີດສອນ" 
+    />
+
+    <div class="container py-5">
         <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none">ໜ້າຫຼັກ</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('departments.index') }}" class="text-decoration-none">ພາກວິຊາ</a></li>
                 <li class="breadcrumb-item active text-muted">{{ $department->name_la }}</li>
             </ol>
         </nav>
@@ -79,15 +85,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .hover-effect { transition: 0.3s ease; }
-        .hover-effect:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; 
-        }
-        .object-fit-cover { object-fit: cover; }
-        .bg-primary-subtle { background-color: #e7f1ff; }
-        .text-primary { color: #004a99 !important; }
-    </style>
 </x-app-layout>

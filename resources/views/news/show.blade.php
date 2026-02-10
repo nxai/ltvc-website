@@ -76,10 +76,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .related-card { transition: 0.3s; background: white; }
-        .related-card:hover { transform: translateX(8px); background: #f8f9fa; }
-        .news-content p { margin-bottom: 1.8rem; }
-    </style>
 </x-app-layout>

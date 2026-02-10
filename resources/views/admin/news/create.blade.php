@@ -1,4 +1,8 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}" class="text-decoration-none">ຂ່າວສານ</a></li>
+        <li class="breadcrumb-item active">ຂຽນຂ່າວໃໝ່</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -31,7 +35,7 @@
 
                             <div class="mb-4">
                                 <label class="form-label fw-bold text-dark">ເນື້ອໃນຂ່າວສານ <span class="text-danger">*</span></label>
-                                <textarea name="content" class="form-control @error('content') is-invalid @enderror" 
+                                <textarea name="content" id="editor" class="form-control @error('content') is-invalid @enderror" 
                                           rows="10" placeholder="ຂຽນລາຍລະອຽດຂ່າວສານທີ່ນີ້..." required>{{ old('content') }}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -75,6 +79,10 @@
         </div>
     </div>
 
+    @push('styles')
+        <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.css" />
+    @endpush
+
     <script>
         document.getElementById('imageInput').onchange = function (evt) {
             const [file] = this.files;
@@ -86,14 +94,24 @@
         }
     </script>
 
-    <style>
-        .border-dashed { border: 2px dashed #004a99 !important; }
-        .form-control:focus {
-            border-color: #004a99;
-            box-shadow: 0 0 0 0.25 rgba(0, 74, 153, 0.1);
-        }
-        .bg-primary { background-color: #004a99 !important; }
-        .btn-primary { background-color: #004a99; border: none; }
-        .btn-primary:hover { background-color: #003366; }
-    </style>
-</x-app-layout>
+    @push('scripts')
+        <script type="importmap">
+            { "imports": { "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.js", "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/44.3.0/" } }
+        </script>
+        <script type="module">
+            import { ClassicEditor, Essentials, Bold, Italic, Heading, Link, List, Paragraph, BlockQuote, Image, ImageUpload, Base64UploadAdapter } from 'ckeditor5';
+
+            ClassicEditor.create(document.querySelector('#editor'), {
+                plugins: [Essentials, Bold, Italic, Heading, Link, List, Paragraph, BlockQuote, Image, ImageUpload, Base64UploadAdapter],
+                toolbar: ['heading', '|', 'bold', 'italic', 'link', '|', 'bulletedList', 'numberedList', 'blockQuote', '|', 'uploadImage', '|', 'undo', 'redo'],
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' }
+                    ]
+                }
+            }).catch(error => console.error(error));
+        </script>
+    @endpush
+</x-admin-layout>

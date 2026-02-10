@@ -1,9 +1,13 @@
-<x-app-layout>
+<x-admin-layout>
+    <x-slot name="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.departments.index') }}" class="text-decoration-none">ພາກວິຊາ</a></li>
+        <li class="breadcrumb-item active">ເພີ່ມໃໝ່</li>
+    </x-slot>
     <div class="container py-5" style="font-family: 'Noto Sans Lao', sans-serif;">
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="mb-4">
-                    <a href="{{ route('departments.index') }}" class="text-decoration-none text-muted">
+                    <a href="{{ route('admin.departments.index') }}" class="text-decoration-none text-muted">
                         <i class="bi bi-arrow-left me-1"></i> ກັບຄືນ
                     </a>
                 </div>
@@ -14,7 +18,7 @@
                     </div>
 
                     <div class="card-body p-4 p-md-5">
-                        <form action="{{ route('departments.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.departments.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-4">
                                 <label class="form-label fw-bold">ຊື່ພາກວິຊາ (ພາສາລາວ) <span class="text-danger">*</span></label>
@@ -58,4 +62,4 @@
             }
         }
     </script>
-</x-app-layout>
+</x-admin-layout>

@@ -54,7 +54,7 @@ class CourseController extends Controller
         }
 
         Course::create($data);
-        return redirect()->route('courses.index')->with('success', 'ເພີ່ມຫຼັກສູດໃໝ່ສຳເລັດ!');
+        return redirect()->route('admin.courses.index')->with('success', 'ເພີ່ມຫຼັກສູດໃໝ່ສຳເລັດ!');
     }
 
     public function edit(Course $course) {
@@ -84,7 +84,7 @@ class CourseController extends Controller
         }
 
         $course->update($data);
-        return redirect()->route('courses.index')->with('success', 'ແກ້ໄຂຂໍ້ມູນສຳເລັດ!');
+        return redirect()->route('admin.courses.index')->with('success', 'ແກ້ໄຂຂໍ້ມູນສຳເລັດ!');
     }
 
     public function destroy(Course $course) {
@@ -94,6 +94,6 @@ class CourseController extends Controller
         }
         
         $course->delete();
-        return redirect()->route('courses.index')->with('success', 'ລຶບຫຼັກສູດອອກແລ້ວ!');
+        return redirect()->route('admin.courses.index')->with('success', 'ລຶບຫຼັກສູດອອກແລ້ວ!');
     }
 }

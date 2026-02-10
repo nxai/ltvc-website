@@ -55,17 +55,4 @@
             {{ $news->links() }}
         </div>
     </div>
-
-    <style>
-        .news-card-modern { transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05) !important; }
-        .news-card-modern:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,74,153,0.1) !important; }
-        .transition-img { transition: transform 0.8s ease; }
-        .news-card-modern:hover .transition-img { transform: scale(1.1); }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        
-        /* Pagination Styling */
-        .custom-pagination .page-link { color: #004a99; border-radius: 8px; border: none; margin: 0 4px; padding: 8px 16px; background: #f8f9fa; }
-        .custom-pagination .page-item.active .page-link { background-color: #004a99; color: white; }
-    </style>
 </x-app-layout>
